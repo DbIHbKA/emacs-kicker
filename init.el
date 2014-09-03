@@ -11,6 +11,7 @@
 
 (require 'cl)				; common lisp goodies, loop
 
+(add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil t)
@@ -43,6 +44,11 @@
 	  :after (progn
 		   (global-set-key (kbd "C-x C-z") 'magit-status)))
 
+   (:name gruvbox-theme
+	  :description "Emacs color theme gruvbox"
+	  :type http
+	  :url "https://raw.githubusercontent.com/Greduan/emacs-theme-gruvbox/master/gruvbox-theme.el")
+
    (:name goto-last-change		; move pointer back to last change
 	  :after (progn
 		   ;; when using AZERTY keyboard, consider C-x C-_
@@ -53,13 +59,12 @@
  my:el-get-packages
  '(el-get				; el-get is self-hosting
    escreen            			; screen for emacs, C-\ C-h
-   php-mode-improved			; if you're into php...
    switch-window			; takes over C-x o
    auto-complete			; complete as you type with overlays
    yasnippet 				; powerful snippet mode
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
    color-theme		                ; nice looking emacs
-   color-theme-tango))	                ; check out color-theme-solarized
+   color-theme-solarized))	                ; check out color-theme-solarized
 
 ;;
 ;; Some recipes require extra tools to be installed
@@ -79,8 +84,13 @@
        my:el-get-packages
        (loop for src in el-get-sources collect (el-get-source-name src))))
 
+(require 'python-pkg-init)
+
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
+
+(require 'gruvbox-theme)
+(load-theme 'gruvbox t)
 
 ;; on to the visual settings
 (setq inhibit-splash-screen t)		; no splash screen, thanks
@@ -181,3 +191,8 @@
   (set-frame-parameter nil 'fullscreen
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 (global-set-key [f11] 'fullscreen)
+
+(require 'python-init)
+
+(provide 'init)
+;;; init.el ends here
