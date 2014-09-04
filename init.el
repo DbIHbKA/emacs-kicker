@@ -85,6 +85,7 @@
        (loop for src in el-get-sources collect (el-get-source-name src))))
 
 (require 'python-pkg-init)
+(require 'haskell-pkg-init)
 
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
@@ -193,6 +194,7 @@
 (global-set-key [f11] 'fullscreen)
 
 (require 'python-init)
+(require 'haskell-init)
 
 (provide 'init)
 ;;; init.el ends here
