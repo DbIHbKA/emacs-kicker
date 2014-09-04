@@ -48,8 +48,8 @@
 
    (:name gruvbox-theme
 	  :description "Emacs color theme gruvbox"
-	  :type github
-	  :pkgname: "Greduan/emacs-theme-gruvbox")
+	  :pkgname "Greduan/emacs-theme-gruvbox"
+	  :type github)
    
    (:name shm
 	  :description "Structured haskell mode"
@@ -117,11 +117,13 @@
 (line-number-mode 1)			; have line numbers and
 (column-number-mode 1)			; column numbers in the mode line
 
-(tool-bar-mode -1)			; no tool bar with icons
-(scroll-bar-mode -1)			; no scroll bars
+
+
 (unless (string-match "apple-darwin" system-configuration)
   ;; on mac, there's always a menu bar drown, don't have it empty
-  (menu-bar-mode -1))
+  (menu-bar-mode -1)
+  (scroll-bar-mode -1)			; no scroll bars
+  (tool-bar-mode -1))			; no tool bar with icons
 
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
