@@ -17,6 +17,8 @@
   '(define-key haskell-mode-map [f8] 'haskell-navigate-imports))
 
 (custom-set-variables
+ ; Set unicode font
+ '(haskell-font-lock-symbols t)
  ; Set up hasktags (part 2)
  '(haskell-tags-on-save t)
  ; Set up interactive mode (part 2)
@@ -69,10 +71,6 @@
 
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
-
-require 'haskell-unicode-input-method)
-(add-hook 'haskell-mode-hook
-	  (lambda () (set-input-method "haskell-unicode")))
 
 (provide 'haskell-init)
 ;;; haskell-init.el ends here

@@ -48,8 +48,8 @@
 
    (:name gruvbox-theme
 	  :description "Emacs color theme gruvbox"
-	  :type http
-	  :url "https://raw.githubusercontent.com/Greduan/emacs-theme-gruvbox/master/gruvbox-theme.el")
+	  :type github
+	  :pkgname: "Greduan/emacs-theme-gruvbox")
    
    (:name shm
 	  :description "Structured haskell mode"
@@ -57,11 +57,16 @@
 	  :url "https://github.com/chrisdone/structured-haskell-mode.git"
 	  :subdir "/elisp/"
 	  :build: "make")
-   
-;;   (:name company-ghc
-;;	  :description "Company-mode completion back-end for haskell-mode via ghc-mod."
-;;	  :type git
-;;	  :url "https://github.com/iquiw/company-ghc.git")
+
+   (:name company
+	  :description "company-mode alias"
+	  :type github
+	  :pkgname "company-mode/company-mode")
+
+   (:name company-ghc
+	  :description "Company-mode completion back-end for haskell-mode via ghc-mod."
+	  :type github
+	  :pkgname "iquiw/company-ghc")
 
    (:name goto-last-change		; move pointer back to last change
 	  :after (progn
