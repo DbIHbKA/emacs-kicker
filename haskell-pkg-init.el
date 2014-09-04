@@ -1,3 +1,6 @@
+; Make Emacs look in Cabal directory for binaries
+(setenv "PATH" (concat "~/.cabal/bin:" (getenv "PATH")))
+(add-to-list 'exec-path "~/.cabal/bin")
 
 (when (not (ignore-errors (el-get-executable-find "ghc")))
   (error "Can't find ghc."))
@@ -18,7 +21,7 @@
   (error "Can't find stylish-haskell."))
 
 (if (ignore-errors (el-get-executable-find "ghc-mod"))
-    (add-to-list 'my:el-get-packages 'ghc)
+    (add-to-list 'my:el-get-packages 'ghc-mod)
   (error "Can't find ghc-mod."))
 
 (when (not (ignore-errors (el-get-executable-find "hlint")))
@@ -26,6 +29,7 @@
 (when (not (ignore-errors (el-get-executable-find "hoogle")))
   (error "Can't find hoogle."))
 
+(add-to-list 'my:el-get-packages 'company-mode)
 (add-to-list 'my:el-get-packages 'company-ghc)
 
 (if (ignore-errors (el-get-executable-find "structured-haskell-mode"))
@@ -36,11 +40,3 @@
 
 (provide 'haskell-pkg-init)
 ;;; haskell-pkg-init.el ends here
-
-
-
-
-
-
-
-

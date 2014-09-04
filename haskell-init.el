@@ -1,6 +1,3 @@
-; Make Emacs look in Cabal directory for binaries
-(setenv "PATH" (concat "~/.cabal/bin:" (getenv "PATH")))
-(add-to-list 'exec-path "~/.cabal/bin")
 (custom-set-variables '(haskell-tags-on-save t))
 
 ; HASKELL-MODE

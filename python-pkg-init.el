@@ -1,4 +1,4 @@
-
+;;; Code:
 (when (not (ignore-errors (el-get-executable-find "python")))
   (error "Can't find python."))
 (when (not (ignore-errors (el-get-executable-find "pip")))
@@ -15,3 +15,4 @@
 (add-to-list 'my:el-get-packages 'flycheck)
 
 (provide 'python-pkg-init)
+;;; python-pkg-init.el ends here

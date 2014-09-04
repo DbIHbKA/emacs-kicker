@@ -1,14 +1,16 @@
-;; emacs kicker --- kick start emacs setup
+;;; emacs kicker --- Kick start emacs setup
+;;; Commentary:
 ;; Copyright (C) 2010 Dimitri Fontaine
 ;;
 ;; Author: Dimitri Fontaine <dim@tapoueh.org>
 ;; URL: https://github.com/dimitri/emacs-kicker
 ;; Created: 2011-04-15
-;; Keywords: emacs setup el-get kick-start starter-kit
+;; Keywords: Emacs setup el-get kick-start starter-kit
 ;; Licence: WTFPL, grab your copy here: http://sam.zoy.org/wtfpl/
 ;;
 ;; This file is NOT part of GNU Emacs.
 
+;;; Code:
 (require 'cl)				; common lisp goodies, loop
 
 (add-to-list 'load-path "~/.emacs.d")
@@ -48,6 +50,18 @@
 	  :description "Emacs color theme gruvbox"
 	  :type http
 	  :url "https://raw.githubusercontent.com/Greduan/emacs-theme-gruvbox/master/gruvbox-theme.el")
+   
+   (:name shm
+	  :description "Structured haskell mode"
+	  :type git
+	  :url "https://github.com/chrisdone/structured-haskell-mode.git"
+	  :subdir "/elisp/"
+	  :build: "make")
+   
+;;   (:name company-ghc
+;;	  :description "Company-mode completion back-end for haskell-mode via ghc-mod."
+;;	  :type git
+;;	  :url "https://github.com/iquiw/company-ghc.git")
 
    (:name goto-last-change		; move pointer back to last change
 	  :after (progn
