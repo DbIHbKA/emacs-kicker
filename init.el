@@ -13,7 +13,19 @@
 ;;; Code:
 (require 'cl)				; common lisp goodies, loop
 
-(add-to-list 'load-path "~/.emacs.d")
+(defun set-exec-path-from-shell-PATH ()
+  "Sets the exec-path to the same value used by the user shell"
+  (let ((path-from-shell
+         (replace-regexp-in-string
+          "[[:space:]\n]*$" ""
+          (shell-command-to-string "$SHELL -l -c 'echo $PATH'"))))
+    (setenv "PATH" path-from-shell)
+    (setq exec-path (split-string path-from-shell path-separator))))
+
+;; call function now
+(set-exec-path-from-shell-PATH)
+
+(add-to-list 'load-path (locate-user-emacs-file "lisp/"))
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
 (unless (require 'el-get nil t)
@@ -121,13 +133,14 @@
 
 (unless (string-match "apple-darwin" system-configuration)
   ;; on mac, there's always a menu bar drown, don't have it empty
-  (menu-bar-mode -1)
-  (scroll-bar-mode -1)			; no scroll bars
-  (tool-bar-mode -1))			; no tool bar with icons
+  (menu-bar-mode -1))
+
+(scroll-bar-mode -1)			; no scroll bars
+(tool-bar-mode -1)			; no tool bar with icons
 
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
-    (set-face-font 'default "Monaco-13")
+    (set-face-font 'default "Source Code Pro")
   (set-face-font 'default "Source Code Pro-10.2"))
 ;; Font from adobe https://github.com/adobe-fonts/source-code-pro
 
