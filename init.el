@@ -141,7 +141,7 @@
 ;; choose your own fonts, in a system dependant way
 (if (string-match "apple-darwin" system-configuration)
     (set-face-font 'default "Source Code Pro")
-  (set-face-font 'default "Source Code Pro-10.2"))
+  (set-face-font 'default "Hasklig-10.2"))
 ;; Font from adobe https://github.com/adobe-fonts/source-code-pro
 
 (global-hl-line-mode)			; highlight current line

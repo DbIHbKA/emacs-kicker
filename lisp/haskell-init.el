@@ -18,7 +18,7 @@
 
 (custom-set-variables
  ; Set unicode font
- '(haskell-font-lock-symbols t)
+ ;'(haskell-font-lock-symbols t)
  ; Set up hasktags (part 2)
  '(haskell-tags-on-save t)
  ; Set up interactive mode (part 2)
