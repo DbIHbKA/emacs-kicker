@@ -1,0 +1,8 @@
+\#*
+.ido*
+.python*
+.smex*
+*~
+session*
+el-get
+*.dat

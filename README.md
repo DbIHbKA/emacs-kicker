@@ -71,3 +71,22 @@ If you want a different setup from the basic +emacs-kicker+ here, the
 simplest way is certainly to fork the project on github then use your own.
 
 Happy Hacking!
+
+
+## Latex Mode
+
+#### AUCTeX
+First things: you need to get AUCTeX
+AUCTeX has a number of nice features:
+ * automatic formatting of a section: `C-c C-q C-s`
+ * section preview: `C-c C-p C-s` (it's amazing)
+
+AUCTeX has may many more features, and you can always consult its [documentation](http://www.gnu.org/software/auctex/documentation.html) if you want to learn more.
+
+#### Outline Mode
+It allows the user to *hide* some parts of the text file, which makes working with large files much easier.
+Features:
+  * hide all the contents of your current sectiont: `C-c C-o C-l`
+  * Move to next unit: `C-c C-o C-n`
+  * Move to previous unit: `C-c C-o C-p`
+  * See the whole document: `C-c C-o C-a`
