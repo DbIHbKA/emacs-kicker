@@ -24,6 +24,8 @@
 (add-to-list 'my:el-get-packages 'haskell-mode)
 (add-to-list 'my:el-get-packages 'smex)
 (add-to-list 'my:el-get-packages 'magit)
+(add-to-list 'my:el-get-packages 'shm)
+(add-to-list 'my:el-get-packages 'hindent)
 
 (provide 'haskell-pkg-init)
 ;;; haskell-pkg-init.el ends here

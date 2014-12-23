@@ -165,7 +165,6 @@ the cursor position happened."
 (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
 
 
-;; Keybindings
 
 (define-key interactive-haskell-mode-map [f5] 'haskell-process-load-or-reload)
 (define-key interactive-haskell-mode-map [f12] 'haskell-process-reload-devel-main)

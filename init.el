@@ -68,7 +68,15 @@
 	  :type git
 	  :url "https://github.com/chrisdone/structured-haskell-mode.git"
 	  :subdir "/elisp/"
-	  :build: "make")
+	  :build: "make"
+    :load-path ("elisp"))
+
+   (:name hindent
+    :description "Haskell indent"
+    :type git
+    :url "https://github.com/chrisdone/hindent"
+    :subdir "/elisp/"
+    :load-path ("elisp"))
 
    (:name company
 	  :description "company-mode alias"
