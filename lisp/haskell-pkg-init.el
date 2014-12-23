@@ -12,31 +12,18 @@
   (error "Can't find happy."))
 
 
+(when (not (ignore-errors (el-get-executable-find "structured-haskell-mode")))
+  (error "Can't find Structured Haskell Mode."))
+(when (not (ignore-errors (el-get-executable-find "ghci-ng")))
+  (error "Can't find ghci-ng."))
+(when (not (ignore-errors (el-get-executable-find "hindent")))
+  (error "Can't find hindent."))
+(when (not (ignore-errors (el-get-executable-find "haskell-docs")))
+  (error "Can't find haskell-docs."))
+
 (add-to-list 'my:el-get-packages 'haskell-mode)
-(add-to-list 'my:el-get-packages 'hi2)
-
-(when (not (ignore-errors (el-get-executable-find "hasktags")))
-  (error "Can't find hasktags."))
-(when (not (ignore-errors (el-get-executable-find "stylish-haskell")))
-  (error "Can't find stylish-haskell."))
-
-(if (ignore-errors (el-get-executable-find "ghc-mod"))
-    (add-to-list 'my:el-get-packages 'ghc-mod)
-  (error "Can't find ghc-mod."))
-
-(when (not (ignore-errors (el-get-executable-find "hlint")))
-  (error "Can't find hlint."))
-(when (not (ignore-errors (el-get-executable-find "hoogle")))
-  (error "Can't find hoogle."))
-
-(add-to-list 'my:el-get-packages 'company)
-(add-to-list 'my:el-get-packages 'company-ghc)
-
-(if (ignore-errors (el-get-executable-find "structured-haskell-mode"))
-    (add-to-list 'my:el-get-packages 'shm)
-  (error "Can't find structured-haskell-mode."))
-
-(add-to-list 'my:el-get-packages 'rainbow-delimiters)
+(add-to-list 'my:el-get-packages 'smex)
+(add-to-list 'my:el-get-packages 'magit)
 
 (provide 'haskell-pkg-init)
 ;;; haskell-pkg-init.el ends here

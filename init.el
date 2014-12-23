@@ -116,7 +116,7 @@
        (loop for src in el-get-sources collect (el-get-source-name src))))
 
 ;(require 'python-pkg-init)
-;(require 'haskell-pkg-init)
+(require 'haskell-pkg-init)
 (require 'latex-pkg-init)
 
 ;; install new packages and init already installed packages
@@ -230,7 +230,7 @@
 (global-set-key [f11] 'fullscreen)
 
 ;(require 'python-init)
-;(require 'haskell-init)
+(require 'haskell-init)
 (require 'latex-init)
 
 (provide 'init)
