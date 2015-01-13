@@ -88,6 +88,11 @@
 	  :type github
 	  :pkgname "iquiw/company-ghc")
 
+   (:name theme-changer
+	  :description "Sunrise/Sunset theme changer for emacs"
+	  :type github
+	  :pkgname "hadronzoo/theme-changer")
+
    (:name goto-last-change		; move pointer back to last change
 	  :after (progn
 		   ;; when using AZERTY keyboard, consider C-x C-_
@@ -102,8 +107,9 @@
    auto-complete			; complete as you type with overlays
    yasnippet 				; powerful snippet mode
    zencoding-mode			; http://www.emacswiki.org/emacs/ZenCoding
+   theme-changer                        ; theme changer dependent from time
    color-theme		                ; nice looking emacs
-   color-theme-solarized))	                ; check out color-theme-solarized
+   color-theme-solarized))	        ; check out color-theme-solarized
 
 ;;
 ;; Some recipes require extra tools to be installed
@@ -130,8 +136,14 @@
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
 
-(require 'gruvbox-theme)
-(load-theme 'gruvbox t)
+;; Set location for theme changer
+(setq calendar-location-name "Moscow, RU")
+(setq calendar-latitude 55.45)
+(setq calendar-longitude 37.36)
+
+;; day and night themes
+(require 'theme-changer)
+(change-theme 'solarized-light 'solarized-dark)
 
 ;; on to the visual settings
 (setq inhibit-splash-screen t)		; no splash screen, thanks
