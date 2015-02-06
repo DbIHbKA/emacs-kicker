@@ -62,7 +62,7 @@
 	  :description "Emacs color theme gruvbox"
 	  :pkgname "Greduan/emacs-theme-gruvbox"
 	  :type github)
-   
+
    (:name shm
 	  :description "Structured haskell mode"
 	  :type git
@@ -129,21 +129,23 @@
        my:el-get-packages
        (loop for src in el-get-sources collect (el-get-source-name src))))
 
-;(require 'python-pkg-init)
+(require 'python-pkg-init)
 (require 'haskell-pkg-init)
 (require 'latex-pkg-init)
 
 ;; install new packages and init already installed packages
 (el-get 'sync my:el-get-packages)
 
-;; Set location for theme changer
-(setq calendar-location-name "Moscow, RU")
-(setq calendar-latitude 55.45)
-(setq calendar-longitude 37.36)
+;; Org-Mode
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-;; day and night themes
-(require 'theme-changer)
-(change-theme 'solarized-light 'solarized-dark)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; Color theme
+(require 'gruvbox-theme)
 
 ;; on to the visual settings
 (setq inhibit-splash-screen t)		; no splash screen, thanks
@@ -249,7 +251,7 @@
 		       (if (frame-parameter nil 'fullscreen) nil 'fullboth)))
 (global-set-key [f11] 'fullscreen)
 
-;(require 'python-init)
+(require 'python-init)
 (require 'haskell-init)
 (require 'latex-init)
 

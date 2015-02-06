@@ -131,3 +131,8 @@ There's a fairly complete list of commands for structured editing [here](https:/
  If you type `import` and hit `SPC` you will get a module completion. Type `d.b.l` and hit `RET` and you should get `Data.ByteString.Lazy`.
   * to qualify import: `C-c C-q`
   * to sort and indent the imports: `C-c C-.`
+
+## Python mode
+
+#### ELPY
+  Elpy is an extension for the Emacs text editor to work with Python projects. [Read more...](http://elpy.readthedocs.org/en/latest/introduction.html)
